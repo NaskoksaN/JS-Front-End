@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="butTrue()">
+    <div>
+        <label>Write input here</label>
+        <input type="text">
+        <button disabled="disabled">Show it</button>
+    </div>
+    <script>
+        function butTrue(){
+            const inputField = document.getElementsByTagName('input')[0];
+            const button = document.getElementsByTagName('button')[0];
+            inputField.addEventListener('input', function () {
+                button.removeAttribute('disabled');
+            });
+        }   
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Focus Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button>Remove Focus Event</button>
+    </div>
+    <script>
+        const password = document.querySelector('input[type="password"]');
+        const button = document.querySelector('button');
+
+        password.addEventListener('focus', focusEvent);
+
+        function focusEvent(event) {
+            event.target.style.background = '#234465';
+        }
+
+        password.addEventListener('blur', (event) => {
+            event.target.style.background = '';
+        });
+
+        button.addEventListener('click', () => {
+            password.removeEventListener('focus', focusEvent);
+        });
+    </script>
+</body>
+</html>
